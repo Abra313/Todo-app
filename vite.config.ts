@@ -10,9 +10,6 @@ export default defineConfig({
   test: {
     globals: true,
   },
-  // define: {
-  //   "process.env.BUILD_NUMBER": JSON.stringify(process.env.BUILD_NUMBER || "dev"),
-  // },
   plugins: [
     react(),
     // Generate QR code for npm run dev:host
@@ -25,7 +22,6 @@ export default defineConfig({
       },
       registerType: "prompt",
       workbox: {
-        // Use runtime caching for dynamic imports
         runtimeCaching: [
           {
             urlPattern: ({ request }) =>
@@ -70,4 +66,25 @@ export default defineConfig({
       includeAssets: ["**/*", "sw.js"],
     }),
   ],
+  // build: {
+  //   rollupOptions: {
+  //     output: {
+  //       // Manually split vendor dependencies and large chunks
+  //       manualChunks(id) {
+  //         if (id.includes("node_modules")) {
+  //           // Put all node_modules into one 'vendor' chunk
+  //           return "vendor";
+  //         }
+  //         // Specific large dependencies can be split into their own chunks
+  //         if (id.includes("emoji-picker-react")) {
+  //           return "emoji-picker-react";
+  //         }
+  //         if (id.includes("react-spring-bottom-sheet")) {
+  //           return "react-spring-bottom-sheet";
+  //         }
+  //       },
+  //     },
+  //   },
+  //   chunkSizeWarningLimit: 1000, // Increase chunk size limit to suppress warning for larger chunks
+  // },
 });

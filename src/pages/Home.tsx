@@ -107,18 +107,20 @@ const Home = () => {
   // Returns a greeting based on the current time.
   const displayGreeting = (): string => {
     const currentTime = new Date();
-    const currentHour = currentTime.getHours();
+    const currentHour = currentTime.getUTCHours(); // Use getUTCHours() to get UTC time
     let greeting: string;
+  
     if (currentHour < 12 && currentHour >= 5) {
       greeting = "Good morning";
-    } else if (currentHour < 18 && currentHour > 12) {
+    } else if (currentHour < 18 && currentHour >= 12) {
       greeting = "Good afternoon";
     } else {
       greeting = "Good evening";
     }
-
+  
     return greeting;
   };
+  
 
   // Returns a task completion message based on the completion percentage.
   const getTaskCompletionText = (completionPercentage: number): string => {
