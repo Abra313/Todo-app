@@ -275,7 +275,7 @@ export const ProfileSidebar = () => {
 
         <StyledDivider />
 
-        <MenuLink to="https://github.com/Abra313/Todo-app">
+        <MenuLink to="">
           <StyledMenuItem translate="no">
             <GitHub /> &nbsp; Github{" "}
             {stars && (
@@ -291,7 +291,7 @@ export const ProfileSidebar = () => {
           </StyledMenuItem>
         </MenuLink>
 
-        <MenuLink to="https://github.com/Abra313/Todo app/issues/new">
+        <MenuLink to="">
           <StyledMenuItem>
             <BugReportRounded /> &nbsp; Report Issue{" "}
             {Boolean(issuesCount || issuesCount === 0) && (
@@ -308,7 +308,7 @@ export const ProfileSidebar = () => {
           </StyledMenuItem>
         </MenuLink>
 
-        <MenuLink to="https://www.buymeacoffee.com/maciekt07">
+        <MenuLink to="#">
           <StyledMenuItem className="bmcMenu">
             <BmcIcon className="bmc-icon" src={theme.darkmode ? bmcLogoLight : bmcLogo} /> &nbsp;
             Buy me a coffee{" "}
@@ -398,7 +398,7 @@ export const ProfileSidebar = () => {
             <span style={{ marginLeft: "6px", marginRight: "4px" }}>by</span>
             <a
               style={{ textDecoration: "none", color: "inherit" }}
-              href="https://github.com/Abra313"
+              href="#"
             >
               Abraham Taiwo (ejire )
             </a>
